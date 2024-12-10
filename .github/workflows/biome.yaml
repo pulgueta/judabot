@@ -1,0 +1,33 @@
+name: Format and lint
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_call:
+    inputs:
+      GH_TOKEN:
+        required: false
+        type: string
+
+concurrency:
+  group: ${{ github.workflow }}-biome-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  biome-format-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup environment
+        uses: ./.github/setup
+
+      - name: Lint code
+        run: pnpm lint
+
+      - name: Format code
+        run: pnpm format

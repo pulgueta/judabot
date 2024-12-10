@@ -1,12 +1,15 @@
 {
   "name": "judabot",
   "version": "0.0.0",
+  "type": "module",
   "description": "Simple bot for Judamoca's Twitch channel",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "tsx watch ./src/index.ts",
+    "dev": "tsx --env-file=.env ./src/env.ts && tsx watch --env-file=.env ./src/index.ts",
     "build": "tsup",
-    "start": "node ./dist/index.mjs"
+    "start": "node --env-file=.env ./dist/env.js && node --env-file=.env ./dist/index.mjs",
+    "lint": "biome lint --write --unsafe .",
+    "format": "biome format --write ."
   },
   "keywords": [],
   "author": "Andrés Rodríguez (pulgueta)",
@@ -17,5 +20,10 @@
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^1.0.8",
+    "ai": "^4.0.14",
+    "zod": "^3.24.0"
   }
 }
