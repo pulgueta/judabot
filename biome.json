@@ -1,41 +1,46 @@
 {
-    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-    "vcs": {
-        "clientKind": "git",
-        "defaultBranch": "main",
-        "enabled": true,
-        "root": ".",
-        "useIgnoreFile": true
-    },
-    "organizeImports": {
-        "enabled": true
-    },
-    "linter": {
-        "enabled": true
-    },
-    "formatter": {
-        "enabled": true,
-        "indentWidth": 2,
-        "indentStyle": "space",
-        "lineWidth": 100,
-        "lineEnding": "lf"
-    },
-    "json": {
-        "formatter": {
-            "enabled": true,
-            "indentWidth": 2,
-            "indentStyle": "space",
-            "lineWidth": 100,
-            "lineEnding": "lf"
-        }
-    },
-    "javascript": {
-        "formatter": {
-            "enabled": true,
-            "indentWidth": 2,
-            "indentStyle": "space",
-            "lineWidth": 100,
-            "lineEnding": "lf"
-        }
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "vcs": {
+    "clientKind": "git",
+    "defaultBranch": "main",
+    "enabled": true,
+    "root": ".",
+    "useIgnoreFile": true
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "style": {
+        "useImportType": "warn"
+      }
     }
+  },
+  "formatter": {
+    "enabled": true,
+    "indentWidth": 2,
+    "indentStyle": "space",
+    "lineWidth": 100,
+    "lineEnding": "lf"
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "indentWidth": 2,
+      "indentStyle": "space",
+      "lineWidth": 100,
+      "lineEnding": "lf"
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "enabled": true,
+      "indentWidth": 2,
+      "indentStyle": "space",
+      "lineWidth": 100,
+      "lineEnding": "lf"
+    }
+  }
 }
